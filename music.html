@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music - Spotify UI</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="music.css">
+</head>
+<body>
+<audio id="audio-player"></audio>
+
+<!-- HEADER -->
+<header class="music-header">
+  <h1>My Music</h1>
+  <div class="profile">
+    <span class="material-icons">account_circle</span>
+  </div>
+</header>
+
+<!-- HERO / Featured Playlist -->
+<section class="hero">
+  <div class="hero-card">
+    <img src="cover.png" alt="Featured Playlist">
+    <div class="hero-info">
+      <h2>Featured Playlist</h2>
+      <p>Best of 2026</p>
+    </div>
+  </div>
+</section>
+
+<!-- Playlist Section -->
+<section class="playlists">
+  <h2>Recommended</h2>
+  <div class="playlist-scroll">
+<div class="playlist-card" data-audio="audio/song1.mp3">
+  <img src="cover1.png" alt="Song 1">
+  <div class="playlist-overlay">
+    <span class="material-icons play-icon">play_arrow</span>
+    <div class="equalizer">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="playlist-info">
+    <h3>Die with a smile</h3>
+    <p>bruno mars</p>
+  </div>
+</div>
+    </div>
+<div class="playlist-card" data-audio="audio/song2.mp3">
+  <img src="cover2.png" alt="Song 2">
+  <div class="playlist-overlay">
+    <span class="material-icons play-icon">play_arrow</span>
+    <div class="equalizer">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="playlist-info">
+    <h3>angel baby</h3>
+    <p>Troye sivan</p>
+  </div>
+</div>
+
+<div class="playlist-card" data-audio="audio/song3.mp3">
+  <img src="cover3.png" alt="Song 3">
+  <div class="playlist-overlay">
+    <span class="material-icons play-icon">play_arrow</span>
+    <div class="equalizer">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="playlist-info">
+    <h3>The winner take it all</h3>
+    <p>ABBA</p>
+  </div>
+</div>
+
+ 
+<div class="playlist-card" data-audio="audio/song4.mp3">
+  <img src="cover4.png" alt="Song 4">
+  <div class="playlist-overlay">
+    <span class="material-icons play-icon">play_arrow</span>
+    <div class="equalizer">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="playlist-info">
+    <h3>Mama is my home</h3>
+    <p>Brian</p>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<script src="music.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Chat Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #0f1224;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: Poppins, sans-serif;
+    }
+    .info {
+      position: absolute;
+      top: 16px;
+      font-size: 14px;
+      opacity: .7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="info">Connecting to live support…</div>
+
+  <!-- LIVECHAT WIDGET -->
+  <script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 19516665;
+    window.__lc.integration_name = "manual_channels";
+    window.__lc.product_name = "livechat";
+    ;(function(n,t,c){
+      function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}
+      var e={_q:[],_h:null,_v:"2.0",
+        on:function(){i(["on",c.call(arguments)])},
+        call:function(){i(["call",c.call(arguments)])},
+        init:function(){
+          var n=t.createElement("script");
+          n.async=!0;
+          n.src="https://cdn.livechatinc.com/tracking.js";
+          t.head.appendChild(n)
+        }};
+      e.init();
+      n.LiveChatWidget=n.LiveChatWidget||e
+    }(window,document,[].slice))
+  </script>
+
+  <script>
+    // auto buka chat saat halaman dibuka
+    window.addEventListener("load", () => {
+      if (window.LiveChatWidget) {
+        LiveChatWidget.call("maximize");
+      }
+    });
+  </script>
+
+</body>
+</html>

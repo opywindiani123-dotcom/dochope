@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zodiac Day</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="zodiac.css">
+</head>
+<body>
+<div class="zodiac-container">
+
+  <div class="header">
+    <span class="badge">Daily Zodiac</span>
+    <h1>ZODIAC DAY</h1>
+    <p>Discover your zodiac & personal message</p>
+  </div>
+
+  <div class="form">
+    <div class="field">
+      <label>Nama</label>
+      <input type="text" id="name" placeholder="Masukkan nama kamu">
+    </div>
+
+    <div class="field">
+      <label>Tanggal Lahir</label>
+      <input type="date" id="birthdate">
+    </div>
+
+    <button id="checkZodiac" class="primary-btn">
+      Reveal My Zodiac
+    </button>
+  </div>
+
+  <div class="result">
+    <div class="result-card">
+      <h2 id="zodiacName"></h2>
+      <p id="zodiacMessage"></p>
+
+      <button id="shareBtn" class="share-btn">
+        Share to WhatsApp 💚
+      </button>
+    </div>
+
+<script src="zodiac.js"></script>
+</body>
+</html>

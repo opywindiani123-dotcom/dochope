@@ -1,0 +1,189 @@
+/* RESET & FONT */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; transition: all .3s ease; }
+body { height: 100vh; display: flex; justify-content: center; align-items: center; background: #8EA2DB; overflow: hidden; }
+
+/* GRID BACKGROUND */
+.grid-bg {
+  position: absolute; width: 100%; height: 100%;
+  background-image: linear-gradient(rgba(255,255,255,.4) 2px, transparent 2px),
+                    linear-gradient(90deg, rgba(255,255,255,.4) 2px, transparent 2px);
+  background-size: 40px 40px; z-index: 0;
+  animation: floatBg 20s linear infinite;
+}
+@keyframes floatBg { from { background-position:0 0; } to { background-position:200px 200px; } }
+
+/* CONTAINER */
+.container {
+  position: relative; width: 380px; background:#fdf9f1; border-radius:28px;
+  padding:28px; box-shadow:10px 10px 0px #00000020; z-index:2;
+  animation: fadeUp 0.8s ease forwards; opacity:0;
+}
+@keyframes fadeUp { from{opacity:0;transform:translateY(40px);} to{opacity:1;transform:translateY(0);} }
+
+/* HEADER */
+header { display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
+.hello-text span { font-size:14px; color:#444; }
+.hello-text h1 { font-size:30px; display:flex; align-items:center; gap:8px; }
+.header-actions { display:flex; gap:8px; }
+.icon { border:2px solid #000; background:#fff; border-radius:50%; padding:6px 8px; cursor:pointer; }
+.icon:hover { transform: translateY(-3px); }
+.icon span.material-icons { font-size:22px; color:#1E223D; }
+.icon.profile span.material-icons { color:white; }
+.icon.toggle-dark span.material-icons { color:#1E223D; }
+
+/* SEARCH */
+.search { display:flex; border:2px solid #000; border-radius:14px; overflow:hidden; margin-bottom:20px; }
+.search-left { background:#cbb7ff; display:flex; justify-content:center; align-items:center; padding:12px; }
+.search-left span.material-icons { font-size:20px; line-height:1; color:#1E223D; display:block; }
+.search input { flex:1; border:none; padding:12px; outline:none; }
+
+/* JOB TYPES */
+.job-types { display:flex; gap:16px; margin-bottom:20px; }
+.job-card { flex:1; border-radius:18px; border:2px solid #000; box-shadow:5px 5px 0px #00000030;
+  cursor:pointer; transform-style:preserve-3d; transition: transform .2s ease; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:18px; position:relative; overflow:hidden;
+}
+.job-card:hover { transform: translateY(-6px); }
+.job-card:active { transform: translateY(2px); box-shadow:2px 2px 0px #00000030; }
+.job-card-icon span.material-icons { font-size:36px; margin-bottom:10px; display:block; color:white; }
+.job-card-text h2 { font-size:18px; margin-bottom:4px; text-align:center; }
+.job-card-text p { font-size:14px; text-align:center; display:flex; align-items:center; gap:6px; }
+.arrow { font-size:18px; }
+.full { background:#9DB4FF; }
+.part { background:#FF7666; color:white; }
+ 
+
+/* RECENT JOBS */
+.section-header { display:flex; justify-content:space-between; margin-bottom:12px; }
+.job-list { display:flex; flex-direction:column; gap:14px; }
+.recent-card { display:flex; align-items:center; gap:12px; background:#fff; padding:14px; border-radius:18px;
+  border:2px solid #000; box-shadow:5px 5px 0px #00000030; cursor:pointer; transform-style:preserve-3d; transition: transform .2s ease; position:relative; overflow:hidden;
+}
+.recent-card:hover { transform: translateY(-4px); }
+.logo { width:42px; height:42px; border-radius:10px; }
+.google { background: conic-gradient(#ea4335 0 90deg,#fbbc05 90deg 180deg,#34a853 180deg 270deg,#4285f4 270deg 360deg); }
+.microsoft { background: linear-gradient(90deg,#f25022 0 50%,#7fba00 50%); }
+.details h4 { font-size:15px; }
+.details span { font-size:13px; color:#777; }
+.tags { font-size:12px; color:#888; }
+.salary { font-weight:700; margin-left:auto; }
+
+/* RIPPLE EFFECT */
+.ripple { position:absolute; width:20px; height:20px; background:rgba(255,255,255,0.4); border-radius:50%; transform:translate(-50%,-50%) scale(1);
+  pointer-events:none; z-index:10; animation:rippleAnim 0.6s ease-out; filter:blur(2px); opacity:0.7; }
+@keyframes rippleAnim { to { transform:translate(-50%,-50%) scale(12); opacity:0; } }
+.ripple {
+  pointer-events: none;
+}
+.contact-us {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* DARK MODE */
+body.dark { background:#1f2335; }
+body.dark .container { background:#2b3050; color:white; }
+body.dark .recent-card { background:#3a3f63; }
+.icon.profile {
+  background: ###000000; /* warna kuning cerah */
+  border: 2px solid #000;
+}
+
+.icon.profile span.material-icons {
+  color: #1E223D; /* pastikan kontras dengan background */
+  font-size: 22px;
+  display: block;
+}
+body.dark .icon.profile span.material-icons {
+  color: #121010; /* di dark mode ikon tetap terlihat */
+}
+/* LINK RESET */
+.contact-us {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* MATIKAN SEMUA PENGHALANG TAP */
+.grid-bg,
+.ripple {
+  pointer-events: none !important;
+}
+
+/* CARD TETAP BISA DI TAP */
+.job-card {
+  pointer-events: auto;
+}
+
+/* MOBILE TAP FIX */
+.contact-us {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.sawer-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+.saweria-logo {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.saweria-logo img {
+width: 48px;
+  height: 48px;
+  background-image: url("zodiac.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+.sawer-link:hover .saweria-logo img {
+  transform: scale(1.1);
+}
+.zodiac-card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+.zodiac-logo {
+  width: 48px;
+  height: 48px;
+  background-image: url("zodiac.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+.job-card.music {
+  background: linear-gradient(135deg, #7f7cff, #a18bff);
+}
+
+.job-card.music .material-icons {
+  font-size: 36px;
+  color: #fff;
+}
+/* Hilangkan garis pada semua link */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Pastikan khusus card music juga aman */
+.job-card.music {
+  text-decoration: none;
+}
+
+/* Hilangkan garis pada h2 jika ada */
+.job-card h2 {
+  text-decoration: none;
+}
+.job-card {
+  text-decoration: none;
+  color: inherit;
+}
+ 
